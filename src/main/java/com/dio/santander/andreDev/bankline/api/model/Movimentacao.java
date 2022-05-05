@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_movimentacao")
+@Table(name = "tb_movimentacao")
 public class Movimentacao {
 
 	@Id
@@ -21,6 +21,8 @@ public class Movimentacao {
 	private Double valor;
 	@Enumerated
 	private MovimentacaoTipo tipo;
+
+	private Conta idConta;
 
 	public Movimentacao() {
 
@@ -66,4 +68,11 @@ public class Movimentacao {
 		this.tipo = tipo;
 	}
 
+	public Conta getIdConta() {
+		return idConta;
+	}
+
+	public void setIdConta(Conta idConta) {
+		this.idConta = idConta;
+	}
 }
