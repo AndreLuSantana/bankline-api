@@ -1,14 +1,15 @@
 package com.dio.santander.andreDev.bankline.api.model;
 
+import javax.persistence.Embeddable;
+
+@Embeddable
 public class Conta {
 
 	private Long numero;
 	private Double saldo;
-	
-	
 
 	public Conta() {
-		
+
 	}
 
 	public Long getNumero() {
