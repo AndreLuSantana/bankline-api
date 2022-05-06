@@ -36,10 +36,6 @@ public class Correntista {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
-
 	public String getCpf() {
 		return cpf;
 	}
