@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.dio.santander.andreDev.bankline.api.model.Correntista;
+import com.dio.santander.andreDev.bankline.api.Dto.CorrentistaDto;
 import com.dio.santander.andreDev.bankline.api.services.CorrentistaService;
 
 @RestController
@@ -19,8 +19,8 @@ public class CorrentistaController {
 	private CorrentistaService service;
 
 	@GetMapping
-	public ResponseEntity<List<Correntista>> findAll(){
-		List<Correntista> correntistas = service.findAll();
+	public ResponseEntity<List<CorrentistaDto>> findAll(){
+		List<CorrentistaDto> correntistas = service.findAll();
 		return ResponseEntity.ok().body(correntistas);
 		
 	}
