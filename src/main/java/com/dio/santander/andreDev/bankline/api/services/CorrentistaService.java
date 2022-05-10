@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dio.santander.andreDev.bankline.api.Dto.CorrentistaDto;
+import com.dio.santander.andreDev.bankline.api.model.Conta;
 import com.dio.santander.andreDev.bankline.api.model.Correntista;
 import com.dio.santander.andreDev.bankline.api.repositories.CorrentistaRepository;
 import com.dio.santander.andreDev.bankline.api.services.exception.ObjectNotFoundException;
@@ -28,6 +29,12 @@ public class CorrentistaService {
 	public Correntista findById(Integer id) {
 		Optional<Correntista> correntista = repository.findById(id);
 		return correntista.orElseThrow(() -> new ObjectNotFoundException("Correntista inexistente."));
+	}
+
+	public CorrentistaDto save(Correntista obj) {
+		obj.setConta(new Conta());
+		Correntista correntista = repository.save(obj);
+		return new CorrentistaDto(correntista);
 	}
 
 }
