@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="tb_correntista")
+@Table(name = "tb_correntista")
 public class Correntista {
 
 	@Id
@@ -16,12 +16,20 @@ public class Correntista {
 	private Integer id;
 	private String cpf;
 	private String nome;
-	
+
 	@Embedded
 	private Conta conta;
 
 	public Correntista() {
 
+	}
+
+	public Correntista(Integer id, String cpf, String nome) {
+		this.id = id;
+		
+		this.cpf = cpf;
+		this.nome = nome;
+		this.conta = new Conta();
 	}
 
 	public Conta getConta() {
