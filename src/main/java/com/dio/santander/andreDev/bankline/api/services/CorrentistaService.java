@@ -33,7 +33,7 @@ public class CorrentistaService {
 
 	public CorrentistaDto save(Correntista obj) {
 		
-		if(obj.getConta() == null) {
+		if(obj.getConta() == null || obj.getConta().getNumero() == 0) {
 			obj.setConta(new Conta());
 		}
 		Correntista correntista = repository.save(obj);
