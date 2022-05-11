@@ -22,7 +22,7 @@ public class Movimentacao {
 	@Enumerated
 	private MovimentacaoTipo tipo;
 
-	private Conta idConta;
+	private Integer idConta;
 
 	public Movimentacao() {
 
@@ -68,11 +68,11 @@ public class Movimentacao {
 		this.tipo = tipo;
 	}
 
-	public Conta getIdConta() {
+	public Integer getIdConta() {
 		return idConta;
 	}
 
-	public void setIdConta(Conta idConta) {
+	public void setIdConta(Integer idConta) {
 		this.idConta = idConta;
 	}
 }
