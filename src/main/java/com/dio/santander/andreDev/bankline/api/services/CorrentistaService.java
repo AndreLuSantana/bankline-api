@@ -32,9 +32,25 @@ public class CorrentistaService {
 	}
 
 	public CorrentistaDto save(Correntista obj) {
-		obj.setConta(new Conta());
+		
+		if(obj.getConta() == null) {
+			obj.setConta(new Conta());
+		}
 		Correntista correntista = repository.save(obj);
 		return new CorrentistaDto(correntista);
 	}
 
+	public Correntista update(Integer id, CorrentistaDto obj) {
+		
+		Correntista correntista = findById(id);
+		updatedata(correntista, obj);
+		repository.save(correntista);
+		return correntista;
+	}
+
+	private void updatedata(Correntista correntista, CorrentistaDto obj) {
+		correntista.setConta(obj.getConta());
+		correntista.setCpf(obj.getCpf());
+		correntista.setConta(obj.getConta());
+	}
 }
